@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+  <h2>Mock Interview</h2>
+  <p>Simulate a complete interview session with AI-generated questions.</p>
+  
+  <form method="POST" action="/mock-interview">
+    <div class="form-group">
+      <label for="field">Choose your field:</label>
+      <select class="form-control" name="field">
+        <option value="software">Software Engineering</option>
+        <option value="data">Data Science</option>
+        <option value="marketing">Marketing</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-success mt-2">Start Interview</button>
+  </form>
+</div>
+{% endblock %}

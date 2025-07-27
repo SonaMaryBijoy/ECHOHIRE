@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EchoHire</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">EchoHire</div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('resume_analyzer') }}">Resume Analyzer</a></li>
+                <li><a href="{{ url_for('interview_coach') }}">Interview Coach</a></li>
+                <li><a href="{{ url_for('mock_interview') }}">Mock Interview</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

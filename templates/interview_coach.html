@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+  <h2>Interview Coach</h2>
+  <p>Welcome to the AI Interview Coach! Here, you can practice answering common interview questions.</p>
+  
+  <form method="POST" action="/interview-coach">
+    <div class="form-group">
+      <label for="response">Your Answer:</label>
+      <textarea class="form-control" name="response" rows="5" placeholder="Type your answer here..."></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Submit</button>
+  </form>
+</div>
+{% endblock %}

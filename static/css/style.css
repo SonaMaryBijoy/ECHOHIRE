@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header, footer {
+    background-color: #004080;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    padding: 2rem;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2b2d42;
+    padding: 1rem 2rem;
+    color: white;
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #edf2f4;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links li a {
+    color: #edf2f4;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-links li a:hover {
+    color: #ef233c;
+    transition: color 0.3s ease;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+input[type="file"], button {
+    display: block;
+    margin-top: 15px;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume Analyzer | EchoHire</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        form {
+            margin-bottom: 30px;
+        }
+        input[type="file"] {
+            display: block;
+            margin: 10px 0;
+            padding: 8px;
+        }
+        button {
+            background-color: #1e88e5;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1565c0;
+        }
+        .results {
+            margin-top: 30px;
+        }
+        .highlighted-text {
+            background: #f9f9f9;
+            padding: 15px;
+            border-left: 4px solid #1e88e5;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+        }
+        mark {
+            background-color: yellow;
+            font-weight: bold;
+        }
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Resume Analyzer</h2>
+        
+        <form method="POST" action="/analyze-resume" enctype="multipart/form-data">
+            <input type="file" name="resume" accept=".pdf" required>
+            <button type="submit">Analyze Resume</button>
+        </form>
+
+        {% if extracted_text %}
+        <div class="results">
+            <h3>Extracted Resume Content (with highlighted keywords):</h3>
+            <div class="highlighted-text">
+                {{ extracted_text|safe }}
+            </div>
+
+            <h3>Generated Interview Questions:</h3>
+            <ul>
+                {% for question in questions %}
+                    <li>{{ question }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
